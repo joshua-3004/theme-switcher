@@ -1,0 +1,125 @@
+/* src/themes.css */
+:root {
+  /* Light Theme Variables */
+  --light-bg: #f5f5f5;
+  --light-text: #333333;
+  --light-primary: #4285f4;
+  --light-secondary: #e0e0e0;
+  --light-accent: #0f9d58;
+  --light-card-bg: #ffffff;
+  --light-border: #dddddd;
+
+  /* Dark Theme Variables */
+  --dark-bg: #222222;
+  --dark-text: #f0f0f0;
+  --dark-primary: #5e97f6;
+  --dark-secondary: #424242;
+  --dark-accent: #26a69a;
+  --dark-card-bg: #333333;
+  --dark-border: #444444;
+}
+
+/* Apply theme variables based on data-theme attribute */
+body[data-theme='light'] {
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --primary-color: var(--light-primary);
+  --secondary-color: var(--light-secondary);
+  --accent-color: var(--light-accent);
+  --card-bg: var(--light-card-bg);
+  --border-color: var(--light-border);
+}
+
+body[data-theme='dark'] {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --primary-color: var(--dark-primary);
+  --secondary-color: var(--dark-secondary);
+  --accent-color: var(--dark-accent);
+  --card-bg: var(--dark-card-bg);
+  --border-color: var(--dark-border);
+}
+
+/* Applying theme to components */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Content Styles */
+.content {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.feature-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-color);
+}
